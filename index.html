@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KDC DIGITAL HUB — uma biblioteca digital sem fronteiras. Descubra eBooks, explore conhecimento e amplie os seus horizontes.">
+  <meta name="theme-color" content="#111111">
+  <title>KDC DIGITAL HUB | Biblioteca Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="KDC Digital Hub - Início">
+      <span class="brand-mark">K</span>
+      <span class="brand-name">KDC <b>DIGITAL HUB</b><small>CONHECIMENTO SEM FRONTEIRAS</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#inicio">Início</a>
+      <a href="#biblioteca">Biblioteca</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#sobre">Sobre nós</a>
+      <a href="#contactos">Contactos</a>
+    </nav>
+    <a class="header-cta" href="#biblioteca">Explorar livros <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <span class="eyebrow"><i></i> A SUA BIBLIOTECA DIGITAL</span>
+        <h1>O conhecimento está a um <em>clique</em> de distância.</h1>
+        <p>Descubra, explore e transforme a sua forma de aprender com a biblioteca digital da KDC DIGITAL HUB.</p>
+        <form class="hero-search" id="heroSearch">
+          <span class="search-icon">⌕</span>
+          <input id="heroSearchInput" type="search" placeholder="Pesquise por livro, autor ou assunto..." aria-label="Pesquisar livros">
+          <button type="submit">Pesquisar</button>
+        </form>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#biblioteca">Explorar biblioteca <span>→</span></a>
+          <a class="text-link" href="#categorias">Descobrir categorias <span>↗</span></a>
+        </div>
+        <div class="hero-proof"><span class="proof-dot"></span> Conhecimento, cultura e inovação num só lugar.</div>
+      </div>
+      <div class="hero-art" aria-label="Ilustração decorativa de livros digitais">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="floating-note note-top">IDEIAS QUE TRANSFORMAM</div>
+        <div class="book-stack">
+          <div class="book book-back"><span>O PODER<br>DO SABER</span><small>KDC EDITIONS</small></div>
+          <div class="book book-middle"><span>EXPLORE<br>NOVOS<br>HORIZONTES</span><small>LEITURA • CULTURA</small></div>
+          <div class="book book-front"><div class="book-symbol">✳</div><span>O FUTURO<br>COMEÇA<br>NA LEITURA</span><small>KDC DIGITAL HUB</small></div>
+        </div>
+        <div class="floating-note note-bottom">LEIA. APRENDA. EVOLUA.</div>
+      </div>
+    </section>
+
+    <section class="stats-strip" aria-label="Sobre a biblioteca">
+      <div><strong>16+</strong><span>Áreas de conhecimento</span></div>
+      <div><strong>24/7</strong><span>Acesso à biblioteca</span></div>
+      <div><strong>∞</strong><span>Possibilidades de aprender</span></div>
+    </section>
+
+    <section class="section categories-section" id="categorias">
+      <div class="section-heading">
+        <div><span class="eyebrow dark-eyebrow">EXPLORE POR INTERESSE</span><h2>Um universo de <em>conhecimento.</em></h2></div>
+        <a class="under-link" href="#biblioteca">Ver biblioteca completa ↗</a>
+      </div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="section library-section" id="biblioteca">
+      <div class="section-heading">
+        <div><span class="eyebrow dark-eyebrow">ACERVO DIGITAL</span><h2>Explore a <em>biblioteca.</em></h2><p class="section-subtitle">Encontre leituras para aprender, criar e ir mais longe.</p></div>
+        <span class="catalog-count" id="catalogCount">0 livros disponíveis</span>
+      </div>
+      <div class="catalog-toolbar">
+        <label class="catalog-search"><span>⌕</span><input id="catalogSearch" type="search" placeholder="Pesquisar título, autor ou palavra-chave..."></label>
+        <select id="categoryFilter" aria-label="Filtrar por categoria"><option value="">Todas as categorias</option></select>
+        <select id="sortFilter" aria-label="Ordenar livros"><option value="featured">Em destaque</option><option value="title">Título: A–Z</option><option value="newest">Mais recentes</option><option value="price">Gratuitos primeiro</option></select>
+      </div>
+      <div class="active-filter-row"><span id="resultsMessage">A mostrar todos os livros</span><button id="clearFilters" class="clear-button" type="button">Limpar filtros ×</button></div>
+      <div class="book-grid" id="bookGrid"></div>
+      <div class="empty-state hidden" id="emptyState"><div>⌕</div><h3>Nenhum livro encontrado</h3><p>Experimente outros termos ou limpe os filtros.</p><button class="button button-dark" id="emptyClear">Limpar pesquisa</button></div>
+    </section>
+
+    <section class="feature-band">
+      <div class="feature-icon">✦</div>
+      <div><span class="eyebrow">A SUA PRÓXIMA DESCOBERTA</span><h2>O próximo grande conhecimento começa aqui.</h2><p>Explore novas ideias e encontre a leitura que pode transformar a sua perspetiva.</p></div>
+      <a class="button button-light" href="#biblioteca">Explorar todos os livros ↗</a>
+    </section>
+
+    <section class="section about-section" id="sobre">
+      <div class="about-visual"><div class="about-tile"><span>IDEIAS</span><b>+</b><span>CONHECIMENTO</span><b>=</b><strong>FUTURO.</strong></div><div class="about-caption">KDC DIGITAL HUB · DESDE O PRIMEIRO CLIQUE</div></div>
+      <div class="about-copy"><span class="eyebrow dark-eyebrow">QUEM SOMOS</span><h2>Mais do que livros. <em>Novas possibilidades.</em></h2><p>A KDC DIGITAL HUB é uma iniciativa dedicada à descoberta, organização e divulgação de conhecimento através de livros digitais. Queremos aproximar leitores de conteúdos relevantes, promover a cultura de leitura e tornar o conhecimento mais acessível.</p><p>O nosso compromisso é construir uma biblioteca digital simples, organizada e preparada para crescer com os seus leitores.</p><a class="button button-primary" href="#contactos">Fale connosco <span>→</span></a></div>
+    </section>
+
+    <section class="contact-band" id="contactos">
+      <div><span class="eyebrow">VAMOS CONVERSAR?</span><h2>Tem uma dúvida ou uma proposta?</h2><p>Entre em contacto com a equipa KDC DIGITAL HUB.</p></div>
+      <a class="button button-light" href="mailto:kdc.digitalhub@gmail.com">Enviar e-mail ↗</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand"><a class="brand brand-light" href="#inicio"><span class="brand-mark">K</span><span class="brand-name">KDC <b>DIGITAL HUB</b><small>CONHECIMENTO SEM FRONTEIRAS</small></span></a><p>Uma biblioteca digital sem fronteiras, onde o conhecimento encontra a inovação.</p></div>
+      <div><h3>Explorar</h3><a href="#inicio">Início</a><a href="#biblioteca">Biblioteca</a><a href="#categorias">Categorias</a><a href="#sobre">Sobre nós</a></div>
+      <div><h3>Contacto</h3><a href="mailto:kdc.digitalhub@gmail.com">kdc.digitalhub@gmail.com</a><a href="#contactos">Angola</a><a href="#contactos">Fale connosco</a></div>
+      <div><h3>Informações</h3><a href="#contactos">Privacidade</a><a href="#contactos">Termos e condições</a><a href="#contactos">Direitos de autor</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> KDC DIGITAL HUB. Todos os direitos reservados.</span><span>FEITO PARA APROXIMAR O CONHECIMENTO.</span></div>
+  </footer>
+
+  <dialog class="book-dialog" id="bookDialog">
+    <button class="dialog-close" id="dialogClose" aria-label="Fechar">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
